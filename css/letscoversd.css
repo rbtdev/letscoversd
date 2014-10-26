@@ -1,0 +1,209 @@
+
+body {
+	background-color: #2E3192;
+	margin: 0px;
+}
+
+img {  
+	border-style: none;
+}
+
+#wrapper {
+	margin: auto;
+	width: 837px;
+	background-color: #458CCC;
+	box-shadow:  0px 0px 15px 10px black;
+}
+
+#content {
+	width: 100%;
+	display: inline;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	text-align: center;
+	line-height: 150%;
+	font-size: medium;
+	font-weight: normal;
+}
+
+#intro {
+	text-align: justify;
+}
+
+.contact {
+	width: 75%;
+	padding: 10px;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	box-shadow: 0px 0px 15px 3px black;
+}
+
+.events {
+	width: 75%;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	box-shadow: 0px 0px 15px 3px black;
+}
+
+.events img {
+	width: 60%;
+	margin: 10px;
+}
+
+#video {
+	width: 75%;
+	padding: 10px;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#header {
+	text-align: center;
+}
+
+#footer {
+	position: relative;
+	text-align: center;
+}
+#footer_promotion {
+	position:absolute;
+	bottom: 10px;
+	left: 0px;
+	width: 100%;
+	font-variant:small-caps;
+	font-size: x-large;
+	font-weight: bold;
+	background-color: rgba(68,140,203,.6);
+	font-family: times;
+	padding:0px;
+	margin: 0px;
+}
+#footer_promotion a {
+	color: white;
+}
+#footer_promotion a:hover {
+	color: yellow;
+}
+
+#main {
+	padding: 30px;
+}
+#mission {
+  font-size: large;
+  text-align: center;
+}
+
+#goal {
+  font-weight: bold;
+  font-size: xx-large;
+  color: yellow;
+  text-align: center;
+}
+
+.area {
+	font-weight: bold;
+	font-size: large;
+	text-decoration: underline;
+}
+
+
+#locations {
+	font-weight: bold;
+	font-size: x-large;
+	text-decoration: none;
+}
+
+.location {
+	font-weight: normal;
+	font-size: medium;
+	text-decoration: none;
+}
+
+#hashtag {
+	font-weight: bold;
+	font-size: large;
+}
+
+.dropName {
+	font-size: x-large;
+	
+}
+
+.dropAddress {
+	font-size: large;
+}
+
+.dropNote {
+	font-size: medium;
+	font-style: italic;
+}
+
+.dropPhone {
+	font-size: large;
+}
+
+.dropHours {
+	front-size: small;
+}
+
+.dropUrl {
+	font-style: italic;
+	font-size: small;
+}
+
+.dropIncentive {
+	font-weight: bold;
+	color: #880000;
+	line-height: 75%;
+	font-size: small;
+}
+
+
+a:link {
+	color: #000088;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:visited {
+	text-decoration: none;
+	color: #000088;
+	font-weight: bold;
+}
+a:hover {
+	text-decoration: none;
+	color: #FFF203;
+	font-weight: bold;
+}
+a:active {
+	text-decoration: none;
+}
+/* CSS Hack for hiding the LIKE count */
+div.fb-like span {
+  display:block;
+  width:48px !important;  
+}
+
+div.fb-like iframe {
+  width:48px !important;
+}
+
+div.fb-like iframe.fb_iframe_widget_lift {
+  width:450px !important;
+}
+
+/* CSS Hack for hiding the FOLLOW count */
+div.fb-follow span {
+  display:block;
+  width:60px !important;  
+}
+
+div.fb-follow iframe {
+  width:60px !important;
+}
+
+div.fb-follow iframe.fb_iframe_widget_lift {
+  width:450px !important;
+}
