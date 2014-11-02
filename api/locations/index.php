@@ -5,14 +5,15 @@ $con = mysql_connect('payattention.db.11463497.hostedresource.com', 'payattentio
 mysql_select_db('payattention', $con) or die('MySQL Error.');
  
 //Run our query
-$result = mysql_query('SELECT * FROM locations', $con) or die('SQL Error.');
+$result = mysql_query('SELECT areas.id AS areaId, areas.name AS areaName, locations.id, locations.name, locations.address, locations.phone, locations.note, locations.hours, locations.incentive FROM locations INNER JOIN areas ON locations.areaId = areas.id;', $con) or die('SQL Error.');
  
-$locations = array();
-while ($location = mysql_fetch_array($result, MYSQL_ASSOC)) {
-	 $locations[] = $location;
+$encode = array();
+
+while($row = mysql_fetch_array($result,MYSQL_ASSOC)) {
+   $encode[$row['areaName']][] = $row;
 }
 
-$output = json_encode(array('locations' => $locations));
+$output = json_encode(array('locations' => $encode));
 //Output the output.
 echo $output;
  

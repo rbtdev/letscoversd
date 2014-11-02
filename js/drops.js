@@ -342,3 +342,29 @@ function locationDetails(area, location) {
 	writeDetail("dropIncentive",drop.incentive);
 	writeDetail("dropUrl", "<a href = http://" + drop.website + ">"+ drop.website + "</a>");
 }
+
+function buildSQL() {
+	var areaTable = [];
+	var locationTable = [];
+	areaId = 1;
+	locId = 1;
+	for (var a = 0; a<drops.areas.length; a ++) {
+		var area = drops.areas[a];
+		areaTable.push("INSERT INTO areas (name) VALUES (" + "'" + area.name + "'" + ");");
+		areaId++
+		for (var l = 0; l<area.locations.length; l++) {
+			var location = area.locations[l];
+			locationTable.push("INSERT INTO locations (areaId, name, address, note, phone, hours, incentive) VALUES (" +
+				(a+1) + ',' +
+				"'" + location.name + "'" + ',' +
+				"'" + location.address  + "'" + ',' +
+				"'" + location.note  + "'" + ',' +
+				"'" + location.phone  + "'" + ',' +
+				"'" + location.hours  + "'" + ',' +
+				"'" + location.incentive +"'" +  ");");
+			locId++;
+		}
+	}
+	var data = JSON.stringify({areas:areaTable, locations:locationTable});
+	document.write(data);
+}
