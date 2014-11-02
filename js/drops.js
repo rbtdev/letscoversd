@@ -303,22 +303,26 @@ var qs = (function(a) {
 
 function locationList() {
 
+	document.write('<ul class="locationList">');
 	for (var i=0; i<drops.areas.length; i++) {
-		document.write('<p class = "area">' + drops.areas[i].name + '</p>');
+		document.write('<li class="area"><span class = "title">' + drops.areas[i].name + '</span>');
+		
 		for (var j=0; j<drops.areas[i].locations.length; j++) {
-			document.write('<p class = "location"><a href = javascript:loadDetailsPage(' + i + ',' + j + ');>' + drops.areas[i].locations[j].name + '</a>');
+			document.write('<div class="location">');
+			document.write('<div class = "name"><a href = javascript:loadDetailsPage(' + i + ',' + j + ');>' + drops.areas[i].locations[j].name + '</a></div>');
 			if(drops.areas[i].locations[j].incentive != "") {
-				document.write('<br><span class = "dropIncentive">' + drops.areas[i].locations[j].incentive + '</span></br></p>');
+				document.write('<div class = "incentive">' + drops.areas[i].locations[j].incentive + '</span></div>');
 			}
-			else {
-				document.write('</p>');
-			}
+			document.write('</div>');
 		}
+		document.write('</li>');
+
 	}
+	document.write('</ul>');
 }
 
 function loadDetailsPage(area, location) {
-	window.location = "locationDetails.html?area=" + area + "&location=" + location;
+	window.location = "location.html?area=" + area + "&location=" + location;
 }
 
 function writeDetail(className, detail) {

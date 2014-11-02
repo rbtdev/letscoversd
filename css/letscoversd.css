@@ -1,73 +1,119 @@
 
 body {
-	background-color: #2E3192;
+	background-color: white;
 	margin: 0px;
 }
 
 img {  
 	border-style: none;
 }
+#header {
+	text-align: center;
+	background-color: #458CCC;
+	margin: auto;
+	width: 40%;
+	margin-bottom: 10px;
+}
+
+#navbar {
+	border-top: 1px solid black;
+	margin: auto;
+	border-bottom: 1px solid black;
+	/*background-color: #fAFAFA*/
+}
+
+.clear {
+	clear: both;
+}
+
+#navbar ul {
+	margin-left: 280px;
+}
 
 #wrapper {
 	margin: auto;
-	width: 837px;
-	background-color: #458CCC;
-	box-shadow:  0px 0px 15px 10px black;
+	width: 1024px;
+	background-color: white;
+	box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+	/*box-shadow:  0px 0px 10px 5px #cccccc;*/
 }
 
 #content {
 	width: 100%;
-	display: inline;
 	font-family: Arial, Helvetica, sans-serif;
-	color: #FFF;
 	text-align: center;
-	line-height: 150%;
+	line-height: 175%;
 	font-size: medium;
 	font-weight: normal;
+	/*background-color: #458CCC;*/
+	color:  #555555;
+	border-radius: 5px;
+	
 }
 
+.slider {
+	margin: auto;
+	position: relative;
+	width: 600px; 
+	height: 300px;
+}
+
+.slider .container {
+	cursor: move;
+	position: absolute;
+	overflow: hidden;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.box {
+	background: #fAFAFA;
+	width: 75%;
+	padding: 10px;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+	/* box-shadow: 0px 0px 10px 3px #444444; */
+	color: #555555;
+}
+
+.goal {
+}
+
+.goal .thermometer {
+	position:relative;
+	float: left;
+	width: 25%;
+	left: 50px;
+}
+.goal .description {
+	position: relative;
+	text-align: left;
+	margin-top: 13px;
+	float:right;
+	width: 70%;
+	right: 30px;
+}
 #intro {
 	text-align: justify;
 }
 
-.contact {
+.video {
 	width: 75%;
 	padding: 10px;
 	margin: 0 auto;
 	margin-top: 30px;
 	margin-bottom: 30px;
-	box-shadow: 0px 0px 15px 3px black;
-}
-
-.events {
-	width: 75%;
-	margin: 0 auto;
-	margin-top: 30px;
-	margin-bottom: 30px;
-	box-shadow: 0px 0px 15px 3px black;
-}
-
-.events img {
-	width: 60%;
-	margin: 10px;
-}
-
-#video {
-	width: 75%;
-	padding: 10px;
-	margin: 0 auto;
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-
-#header {
-	text-align: center;
 }
 
 #footer {
 	position: relative;
 	text-align: center;
 }
+
 #footer_promotion {
 	position:absolute;
 	bottom: 10px;
@@ -96,31 +142,52 @@ img {
   text-align: center;
 }
 
-#goal {
-  font-weight: bold;
-  font-size: xx-large;
-  color: yellow;
-  text-align: center;
-}
-
-.area {
-	font-weight: bold;
-	font-size: large;
-	text-decoration: underline;
-}
-
-
 #locations {
 	font-weight: bold;
 	font-size: x-large;
 	text-decoration: none;
+ 
 }
 
-.location {
+.locationList {
+
+	-webkit-column-count: 2; 
+    -moz-column-count: 2; 
+    column-count: 2;
+	text-align: center;
+	padding: 0px;
+}
+.locationList ul {
+	margin-top: 0px;
+}
+.locationList .area {
+	padding-bottom: 10px;
+break-inside: avoid-column;
+}
+.locationList .area .title {
+	font-weight: bold;
+	font-size: large;
+
+}
+
+.locationList .location {
+	padding-left: 10px;
+	padding-bottom: 10px;
 	font-weight: normal;
 	font-size: medium;
 	text-decoration: none;
 }
+
+.locationList .location .name {
+
+}
+
+.locationList .location .incentive {
+	font-weight: bold;
+	color: #880000;
+	font-size: small;
+}
+
 
 #hashtag {
 	font-weight: bold;
@@ -165,17 +232,14 @@ img {
 a:link {
 	color: #000088;
 	text-decoration: none;
-	font-weight: bold;
 }
 a:visited {
 	text-decoration: none;
 	color: #000088;
-	font-weight: bold;
 }
 a:hover {
 	text-decoration: none;
 	color: #FFF203;
-	font-weight: bold;
 }
 a:active {
 	text-decoration: none;
