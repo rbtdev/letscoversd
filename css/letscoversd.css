@@ -1,6 +1,6 @@
 
 body {
-	background-color: white;
+	background-color: #2E3192;;
 	margin: 0px;
 }
 
@@ -31,9 +31,9 @@ img {
 #wrapper {
 	margin: auto;
 	width: 1024px;
-	background-color: white;
-	box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
-	/*box-shadow:  0px 0px 10px 5px #cccccc;*/
+	background-color: #458CCC;
+	/*box-shadow: 1px 1px 4px #999, 5px 0 20px #333333; */
+	box-shadow:  0px 0px 10px 5px #333333;
 }
 
 #content {
@@ -44,10 +44,9 @@ img {
 	font-size: medium;
 	font-weight: normal;
 	/*background-color: #458CCC;*/
-	color:  #555555;
-	border-radius: 5px;
-	
+	color:  white;
 }
+
 
 .slider {
 	margin: auto;
@@ -67,6 +66,7 @@ img {
 }
 
 .box {
+	border-radius: 3px;
 	background: #fAFAFA;
 	width: 75%;
 	padding: 10px;
@@ -74,7 +74,7 @@ img {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
-	/* box-shadow: 0px 0px 10px 3px #444444; */
+	/*box-shadow: 0px 0px 10px 3px #444444;*/
 	color: #555555;
 }
 
