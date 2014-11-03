@@ -1,11 +1,5 @@
 
-
 var api = {
-	offline: true,
-
-
-
-
 	areas: {
 		url: '/api/areas',
 		areasFixture:
@@ -345,11 +339,8 @@ var api = {
 			}
 		}
 	},
-	
 
-
-
-	associate: function (areas,locations) {
+	join: function (areas,locations) {
 		var list = [];
 		locations.sort(
 			function (a,b) {
@@ -383,7 +374,7 @@ var api = {
 		}
 		return({areas:list});
 	},
-	locationList: function (drops) {
+	render: function (drops) {
 
 		document.write('<ul class="locationList">');
 		for (var i=0; i<drops.areas.length; i++) {
@@ -391,14 +382,13 @@ var api = {
 			
 			for (var j=0; j<drops.areas[i].locations.length; j++) {
 				document.write('<div class="location">');
-				document.write('<div class = "name"><a href = javascript:loadDetailsPage(' + i + ',' + j + ');>' + drops.areas[i].locations[j].name + '</a></div>');
+				document.write('<div class = "name"><a href = javascript:api.loadDetailsPage(' + i + ',' + j + ');>' + drops.areas[i].locations[j].name + '</a></div>');
 				if(drops.areas[i].locations[j].incentive != "") {
 					document.write('<div class = "incentive">' + drops.areas[i].locations[j].incentive + '</span></div>');
 				}
 				document.write('</div>');
 			}
 			document.write('</li>');
-
 		}
 		document.write('</ul>');
 	},

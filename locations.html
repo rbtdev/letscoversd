@@ -67,9 +67,8 @@
 					<script>
 						api.areas.findAll(function (areas) {
 							api.locations.findAll(function (locations) {
-									var drops = api.associate(areas.areas, locations.locations);
-									debugger
-									api.locationList(drops);
+									var drops = api.join(areas.areas, locations.locations);
+									api.render(drops);
 								});
 							});
 	
