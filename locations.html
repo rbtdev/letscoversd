@@ -24,6 +24,7 @@
 		  ga('create', 'UA-10384331-4', 'letscoversandiego.com');
 		  ga('send', 'pageview');
 		</script>
+
 	</head>
 	<body>
 		<div id="fb-root"></div>
@@ -64,7 +65,14 @@
 						Click on location for Address & Drop Off Times
 					</p>
 					<script>
-						locationList();
+						api.areas.findAll(function (areas) {
+							api.locations.findAll(function (locations) {
+									var drops = api.associate(areas.areas, locations.locations);
+									debugger
+									api.locationList(drops);
+								});
+							});
+	
 					</script>
 				</div>
 			</div>
