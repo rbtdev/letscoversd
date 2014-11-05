@@ -1,7 +1,11 @@
+
 var App = (App || {});
-App.models = {
+debugger
+App.models = (App.models || {
 	areas: {
 		resource: 'areas',
+		_data: null,
+		isLoaded: false,
 		fixture:
 		{
 		  "areas": [
@@ -64,16 +68,34 @@ App.models = {
 		  ]
 		},
 		findAll: function (resolve, reject) {
-			if (App.offLine) {
-				resolve(this.fixture);
+			if(!this.isLoaded) {
+				if (App.offLine) {
+					debugger;
+					this._data = this.fixture;
+					this.isLoaded-true;
+					resolve(this.fixture);
+				}
+				else {
+					var _this = this;
+					var _resolve = resolve;
+					App.api.findAll(this.resource, 
+						function (data) {
+							_this._data = data;
+							_this.isLoaded-true;
+							_resolve
+						}, 
+						reject);
+				}
 			}
 			else {
-				App.api.findAll(this.resource, resolve, reject);
+				resolve(this.data);
 			}
-		},
+		}
 	},
 	locations: {
 		resource: "locations",
+		_data: null,
+		isLoaded: false,
 		fixture: 
 		{
 	  		"locations": [
@@ -310,11 +332,28 @@ App.models = {
 	  		]
 		},
 		findAll: function (resolve, reject) {
-			if (App.offLine) {
-				resolve(this.fixture);
+			debugger
+			if(!this.isLoaded) {
+				if (App.offLine) {
+					debugger;
+					this._data = this.fixture;
+					this.isLoaded-true;
+					resolve(this.fixture);
+				}
+				else {
+					var _this = this;
+					var _resolve = resolve;
+					App.api.findAll(this.resource, 
+						function (data) {
+							_this._data = data;
+							_this.isLoaded-true;
+							_resolve
+						}, 
+						reject);
+				}
 			}
 			else {
-				App.api.findAll(this.resource, resolve, reject);
+				resolve(this.data);
 			}
 		}
 	},
@@ -383,9 +422,9 @@ App.models = {
 		}
 	},
 
-	locationDetailsfunction: function (area, location) {
+	locationDetails: function (location) {
 
-		var drop = drops.areas[area].locations[location];
+		var drop = this.locations._data[location];
 		this.writeDetail("dropName", drop.name);
 		this.writeDetail("dropAddress", drop.address);
 		this.writeDetail("dropNote", drop.note);
@@ -395,4 +434,4 @@ App.models = {
 		this.writeDetail("dropUrl", "<a href = http://" + drop.website + ">"+ drop.website + "</a>");
 	},
 
-}
+});

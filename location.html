@@ -27,22 +27,8 @@
 		  ga('create', 'UA-10384331-4', 'letscoversandiego.com');
 		  ga('send', 'pageview');
 		</script>
-		<script>
-		<!-- get url query string -->
-		(qs=function(a) {
-			if (a == "") return {};
-			var b = {};
-			for (var i = 0; i < a.length; ++i)
-			{
-				var p=a[i].split('=');
-				if (p.length != 2) continue;
-				b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
-			}
-			return b;
-		})(window.location.search.substr(1).split('&');
-		</script>
 	</head>
-	<body onload='loadMap(App.models.locations[parseInt(qs["location"],10)].address)'>
+	<body>
 		<div id = "wrapper">
 			<div id = "content">	
 				<div id = "header">
@@ -73,7 +59,7 @@
 				<div id = "main">
 					<p id="mission">Its Cold Outside Lets Take Care of our  Homeless!</p>
 					<script>
-						App.models.locationDetails(parseInt(qs["area"],10), parseInt(qs["location"],10))
+						App.models.locationDetails(parseInt(App.queryString()["location"],10))
 					</script>
 					<div id="map_canvas" style="box-shadow:  0px 0px 15px 3px black; margin: 30 auto; width:300px; height:300px"></div>
 				</div>

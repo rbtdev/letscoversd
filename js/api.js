@@ -1,6 +1,6 @@
 var App = (App || {});
 App.api = {
-	offLine: true
+	offLine: false,
 	url: '/api/',
 	findAll: function (resource, resolve, reject) {
 		var _resolve = resolve;
