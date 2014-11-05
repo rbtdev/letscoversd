@@ -1,0 +1,18 @@
+<html>
+<head>
+<script src= "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="./js/drops.js"></script>
+</head>
+<body>
+	Data
+	<div>
+	<script>
+		api.areas.findAll(function (areas) {
+			api.locations.findAll(function (locations) {
+				var grouped = api.associate(areas.areas, locations.locations);
+			});
+		});
+	</script>
+	</div>
+</body>
+</html>
