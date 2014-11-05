@@ -1,4 +1,4 @@
-
+App = App || {};
 var api = {
 	areas: {
 		url: '/api/areas',

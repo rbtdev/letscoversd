@@ -1,4 +1,4 @@
-
+var App = (App || {});
 App.api = {
 	offLine: true
 	url: '/api/',

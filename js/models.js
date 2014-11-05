@@ -1,3 +1,4 @@
+var App = (App || {});
 App.models = {
 	areas: {
 		resource: 'areas',
@@ -63,7 +64,7 @@ App.models = {
 		  ]
 		},
 		findAll: function (resolve, reject) {
-			if (App.api.offLine) {
+			if (App.offLine) {
 				resolve(this.fixture);
 			}
 			else {
@@ -309,7 +310,7 @@ App.models = {
 	  		]
 		},
 		findAll: function (resolve, reject) {
-			if (App.api.offLine) {
+			if (App.offLine) {
 				resolve(this.fixture);
 			}
 			else {
@@ -346,6 +347,7 @@ App.models = {
 		for (var a=0; a<areas.length; a++) {
 			list.push({name: areas[a].name, locations: []})
 			while ((l<locations.length) && (locations[l].areaId == areas[a].id)){
+				locations[l].index = l;
 				list[a].locations.push(locations[l]);
 				l++
 			}
@@ -360,7 +362,7 @@ App.models = {
 			
 			for (var j=0; j<drops.areas[i].locations.length; j++) {
 				document.write('<div class="location">');
-				document.write('<div class = "name"><a href = javascript:api.loadDetailsPage(' + i + ',' + j + ');>' + drops.areas[i].locations[j].name + '</a></div>');
+				document.write('<div class = "name"><a href = javascript:App.models.loadDetailsPage('+drops.areas[i].locations[j].index+');>' + drops.areas[i].locations[j].name + '</a></div>');
 				if(drops.areas[i].locations[j].incentive != "") {
 					document.write('<div class = "incentive">' + drops.areas[i].locations[j].incentive + '</span></div>');
 				}
@@ -371,8 +373,8 @@ App.models = {
 		document.write('</ul>');
 	},
 
-	loadDetailsPage: function (area, location) {
-		window.location = "location.html?area=" + area + "&location=" + location;
+	loadDetailsPage: function (location) {
+		window.location = "location.html?location=" + location;
 	},
 	
 	writeDetail: function (className, detail) {
@@ -384,13 +386,13 @@ App.models = {
 	locationDetailsfunction: function (area, location) {
 
 		var drop = drops.areas[area].locations[location];
-		writeDetail("dropName", drop.name);
-		writeDetail("dropAddress", drop.address);
-		writeDetail("dropNote", drop.note);
-		writeDetail("dropPhone", drop.phone);
-		writeDetail("dropHours", drop.hours);
-		writeDetail("dropIncentive",drop.incentive);
-		writeDetail("dropUrl", "<a href = http://" + drop.website + ">"+ drop.website + "</a>");
+		this.writeDetail("dropName", drop.name);
+		this.writeDetail("dropAddress", drop.address);
+		this.writeDetail("dropNote", drop.note);
+		this.writeDetail("dropPhone", drop.phone);
+		this.writeDetail("dropHours", drop.hours);
+		this.writeDetail("dropIncentive",drop.incentive);
+		this.writeDetail("dropUrl", "<a href = http://" + drop.website + ">"+ drop.website + "</a>");
 	},
 
 }
