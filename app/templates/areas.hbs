@@ -1,0 +1,16 @@
+<h2>Areas Template</h2>
+<ul>
+	<li>
+	{{input placeholder = "Name" value = controller.newArea.name}}
+<button {{action 'addArea'}}>Add Area</button>
+</li>
+	{{#each}}
+	<li>{{#link-to 'area' this}}{{name}}{{/link-to}}
+		<ul>
+			{{#each location in locations}}
+				<li>{{#link-to 'location' location}}{{location.name}}{{/link-to}}</li>
+			{{/each}}
+		</ul>
+	</li>
+	{{/each}}
+</ul>

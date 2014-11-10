@@ -1,0 +1,16 @@
+<h2>Area Details</h2>
+<ul>Name: {{name}}
+	<li>
+	{{input placeholder = "Name" value = controller.newLocation.name}}
+	{{input placeholder = "Address" value = controller.newLocation.address}}
+	{{input placeholder = "Phone" value = controller.newLocation.phone}}
+	{{input placeholder = "Hours" value = controller.newLocation.hours}}
+	{{input placeholder = "Website" value = controller.newLocation.website}}
+	{{input placeholder = "Incentive" value = controller.newLocation.incentive}}	
+	<button {{action 'addLocation'}}>Add Location</button>
+	{{#each location in locations}}
+		<li>Name: {{location.name}}
+		<button {{action 'deleteLocation' location}}>Delete</button>
+		</li>
+	{{/each}}
+</ul>
