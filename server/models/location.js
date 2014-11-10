@@ -10,6 +10,7 @@ var LocationSchema = new Schema({
     address: String,
     phone: String,
     hours: String,
+    notes: String,
     website: String,
     incentive: String,
     area:ObjectId
@@ -17,13 +18,19 @@ var LocationSchema = new Schema({
 
 LocationSchema.pre('remove', function (next) {
 	var _this = this;
+  console.log('In pre-remove.')
 	Area.findById(this.area, function (err, area) {
 		if (!err) {
+      console.log('Found area (id = ' + area._id + ')')
 			var locations = area.locations;
+      console.log("Area.locations: " + JSON.stringify(locations));
 			if (locations) {
 				for (var i = 0; i< locations.length; i++) {
+          console.log('Locations[' + i + ']: ' + locations[i]);
 					if (locations[i] == _this.id) {
+             console.log('Splicing locations...');
 						 locations.splice(i, 1);
+             console.log('New locacions: ' + JSON.stringify(locations));
 					}
 				}
 			}
