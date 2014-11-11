@@ -12,7 +12,6 @@ export default Ember.ObjectController.extend({
 			this.set('newLocation', {});
 		},
 		deleteLocation: function (location) {
-			debugger;
 			location.destroyRecord();
 		}
 	}

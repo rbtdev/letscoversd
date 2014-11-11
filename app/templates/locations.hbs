@@ -1,4 +1,7 @@
 <h2>Locations Template</h2>
 {{#each}}
-	<li>{{#link-to 'location' this }}{{name}}{{/link-to}}</li>
+	<li>
+		{{#link-to 'location' this }}{{name}}{{/link-to}}
+		<button {{action 'delete' this}}>Delete</button>
+	</li>
 {{/each}}

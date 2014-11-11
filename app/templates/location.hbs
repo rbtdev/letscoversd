@@ -1,7 +1,20 @@
 <h2>Location Details</h2>
-<div>Name: {{name}}</div>
-<div>Address: {{address}}</div>
-<div>Hours: {{hours}}</div>
-<div>Phone: {{phone}}</div>
-<div>Incentive: {{incentive}}</div>
-<div>Website: {{website}}</div>
+{{#if isEdit}}
+	{{input placeholder = "Name" value = name}}
+	{{input placeholder = "Address" value = address}}
+	{{input placeholder = "Notes" value = notes}}
+	{{input placeholder = "Phone" value = phone}}
+	{{input placeholder = "Hours" value = hours}}
+	{{input placeholder = "Website" value = website}}
+	{{input placeholder = "Incentive" value = incentive}}	
+	<button {{action 'save'}}>Save Changes</button>
+{{else}}
+	<div>Name: {{name}}</div>
+	<div>Address: {{address}}</div>
+	<div>Notes: {{notes}}</div>
+	<div>Hours: {{hours}}</div>
+	<div>Phone: {{phone}}</div>
+	<div>Incentive: {{incentive}}</div>
+	<div>Website: {{website}}</div>
+	<button {{action 'delete'}}>Delete Location</button>
+{{/if}}
