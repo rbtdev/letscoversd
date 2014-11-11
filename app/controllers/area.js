@@ -11,8 +11,5 @@ export default Ember.ObjectController.extend({
 			this.store.createRecord('location', newLocation).save();
 			this.set('newLocation', {});
 		},
-		deleteLocation: function (location) {
-			location.destroyRecord();
-		}
 	}
 });

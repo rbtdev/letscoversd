@@ -7,9 +7,6 @@ export default Ember.ArrayController.extend({
 		add: function () {
 			this.store.createRecord('location', this.get('newLocation')).save();
 			this.set('newLocation', {});
-		},
-		delete: function (location) {
-			location.destroyRecord();
 		}
 	}
 });

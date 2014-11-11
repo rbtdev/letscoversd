@@ -1,9 +1,6 @@
-<h2>Areas Template</h2>
-<ul>
-	<li>
-	{{input placeholder = "Name" value = controller.newArea.name}}
+<div>New Area: {{input placeholder = "Name" value = controller.newArea.name}}</div>
 <button {{action 'addArea'}}>Add Area</button>
-</li>
+<ul>
 	{{#each}}
 	<li>{{#link-to 'area' this}}{{name}}{{/link-to}}
 		<ul>

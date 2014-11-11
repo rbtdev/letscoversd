@@ -37,12 +37,13 @@ LocationSchema.pre('remove', function (next) {
 
 LocationSchema.pre('save', function (next) {
 
-  // Find the  existing area that has this location
-  //    If it's the current locations area then do nothing
-  //    Else
-  //      if not none
-  //        remove location from the area
-  //      add the location to the new area
+  //
+  // This pre save trigger ensures that referential integrity 
+  //  is maintained between the location.area id and the list of locations
+  //  in associated areas.
+  //
+  //  if the associated area for this location has changed, then remove the 
+  //  location from the list in the old area and add it to the new one.
   //
   var _this = this;
   Area.findOne({locations: this.area }, function (err, oldArea) {
@@ -52,19 +53,42 @@ LocationSchema.pre('save', function (next) {
         if (areaId) {
           var i = area.locations.indexOf(_this.id);
           oldArea.locations.splice(i, 1);
-          oldArea.save();
+          oldArea.save(function (err) {
+            if (!err) {
+              next();
+            }
+            else {
+              console.log("Error");
+              next(err);
+            }
+          });
         }
         var locationId = _this.id;
         Area.findById(_this.area, function (err, newArea) {
           if (!err) {
             newArea.locations.push(locationId);
-            newArea.save();
+            newArea.save(function (err) {
+              if (!err) {
+                next();
+              }
+              else {
+                console.log("Error");
+                next(err);
+              }
+            });
+          }
+          else {
+            console.log("Error");
+            next(err);
           }
         });
       }
     }
+    else {
+      console.log("Error");
+      next(err);
+    }
   });
-  next();
 });
 
 
