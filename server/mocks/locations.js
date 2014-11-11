@@ -6,13 +6,13 @@ module.exports = function(app) {
 
   locationsRouter.get('/', function(req, res) {
     Location.find({}, function(err, locations) {
-           res.send({"locations":locations});
+           res.status(200).send({"locations":locations});
     });
   });
 
   locationsRouter.get('/:id', function(req, res) {
     Location.find({_id: req.params.id}, function(err, location) {
-           res.send({"location":location});
+           res.status(200).send({"location":location});
     });
   });
 
@@ -21,15 +21,36 @@ module.exports = function(app) {
       if (!err) {
         location.remove(function (err) {
           if (!err) {
-            res.send({});
+            res.status(200).send({});
           }
           else {
-            res.send(err);
+            res.status(500).send(err);
           }
         });
       }
       else {
-        res.send(err);
+        res.status(500).send(err);
+      }
+    });
+  });
+
+  locationsRouter.put('/:id', function (req, res) {
+    Location.findById(req.params.id, function (err, location) {
+      if (!err) {
+        location.name = req.body.location.name,
+        location.address = req.body.location.address,
+        location.phone = req.body.location.phone,
+        location.incentive = req.body.location.incentive,
+        location.area  = req.body.location.area
+
+        location.save(function (err, record) {
+            if (!err) {
+              return res.status(200).send({location: record});
+            }
+            else {
+              return res.status(500).send(err);
+            }
+        });
       }
     });
   });
@@ -48,12 +69,12 @@ module.exports = function(app) {
 
   	location.save(function (err, record) {
   		if (!err) {
-  			return res.send({location: record})
+  			return res.status(200).send({location: record})
   		}
   		else {
-  			return res.send(err)
+  			return res.status(500).send(err)
   		}
-  	})
+  	});
 
   });
   app.use('/api/locations', locationsRouter);

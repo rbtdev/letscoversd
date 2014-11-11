@@ -6,13 +6,13 @@ module.exports = function(app) {
 
   areasRouter.get('/', function(req, res) {
   	Area.find({}, function(err, areas) {
-           res.send({"areas":areas});
+           res.status(200).send({"areas":areas});
     });
   });
 
   areasRouter.get('/:id', function(req, res) {
     Area.find({_id: req.params.id}, function(err, area) {
-           res.send({"area":area});
+           res.status(200).send({"area":area});
     });
   });
 
@@ -27,10 +27,10 @@ module.exports = function(app) {
 
   	area.save(function (err, record) {
   		if (!err) {
-  			return res.send({area: record})
+  			return res.status(200).send({area: record})
   		}
   		else {
-  			return res.send(err)
+  			return res.status(500).send(err)
   		}
   	})
 
@@ -44,15 +44,15 @@ module.exports = function(app) {
         area.locations = req.body.area.locations
         area.save(function (err, area) {
           if (!err) {
-            res.send({area: area})
+            res.status(200).send({area: area})
           }
           else {
-            res.send(err)
+            res.status(500).send(err)
           }
         })  
       }
       else {
-        res.send(err)
+        res.status(500).send(err)
       }
     });
   });

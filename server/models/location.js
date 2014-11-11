@@ -18,19 +18,13 @@ var LocationSchema = new Schema({
 
 LocationSchema.pre('remove', function (next) {
 	var _this = this;
-  console.log('In pre-remove.')
 	Area.findById(this.area, function (err, area) {
 		if (!err) {
-      console.log('Found area (id = ' + area._id + ')')
 			var locations = area.locations;
-      console.log("Area.locations: " + JSON.stringify(locations));
 			if (locations) {
 				for (var i = 0; i< locations.length; i++) {
-          console.log('Locations[' + i + ']: ' + locations[i]);
 					if (locations[i] == _this.id) {
-             console.log('Splicing locations...');
 						 locations.splice(i, 1);
-             console.log('New locacions: ' + JSON.stringify(locations));
 					}
 				}
 			}
@@ -42,22 +36,36 @@ LocationSchema.pre('remove', function (next) {
 
 
 LocationSchema.pre('save', function (next) {
-  console.log("doc: " + JSON.stringify(this));
+
+  // Find the  existing area that has this location
+  //    If it's the current locations area then do nothing
+  //    Else
+  //      if not none
+  //        remove location from the area
+  //      add the location to the new area
+  //
   var _this = this;
-  Area.findById(this.area, function (err, area) {
-  	if (!err) {
-  		if (!area.locations) {
-  			area.locations = [_this.id];
-  		}
-  		else {
-  			area.locations.push(_this.id);
-  		}
-  		area.save();
-  	}
-  	else {
-  		console.log("error finding referenced area.");
-  	}
+  Area.findOne({locations: this.area }, function (err, oldArea) {
+    if (!err) {
+      var areaId = oldArea?oldArea.id:null;
+      if (areaId != _this.area) {
+        if (areaId) {
+          var i = area.locations.indexOf(_this.id);
+          oldArea.locations.splice(i, 1);
+          oldArea.save();
+        }
+        var locationId = _this.id;
+        Area.findById(_this.area, function (err, newArea) {
+          if (!err) {
+            newArea.locations.push(locationId);
+            newArea.save();
+          }
+        });
+      }
+    }
   });
   next();
 });
+
+
 exports.Location = mongoose.model('Location', LocationSchema);
