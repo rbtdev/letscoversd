@@ -1,5 +1,10 @@
-<div>New Area: {{input placeholder = "Name" value = controller.newArea.name}}</div>
-<button {{action 'addArea'}}>Add Area</button>
+<form>
+	<fieldset>
+		<legend>New</legend>
+		{{input placeholder = "Name" value = controller.newArea.name}}
+		<button class = 'tiny' {{action 'addArea'}}>Add Area</button>
+	</fieldset>
+</form>
 <ul>
 	{{#each}}
 	<li>{{#link-to 'area' this}}{{name}}{{/link-to}}

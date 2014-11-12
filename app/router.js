@@ -10,6 +10,8 @@ Router.map(function() {
 	this.resource('location', { 'path' : 'locations/:id' });
 	this.resource('areas');
 	this.resource('area', { 'path' : 'areas/:id' });
+	this.route('events');
+	this.route('about');
 });
 
 export default Router;

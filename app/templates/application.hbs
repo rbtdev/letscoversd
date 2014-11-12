@@ -1,3 +1,22 @@
 
-{{#link-to 'areas'}}Areas{{/link-to}}
+
+<nav class="top-bar show-for-medium-up" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Top Bar for Medium & Large</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li>{{#link-to 'application'}}Home{{/link-to}}</li>
+      <li>{{#link-to 'areas'}}Locations{{/link-to}}</li>
+      <li>{{#link-to 'events'}}Events{{/link-to}}</li>
+      <li>{{#link-to 'about'}}About Us{{/link-to}}</li>
+    </ul>
+  </section>
+</nav>
+
 {{outlet}}
