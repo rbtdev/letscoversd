@@ -1,25 +1,30 @@
 
 <div class = "row">
-  <img src = './assets/images/downtown.jpg'></img>
-  <nav class="top-bar show-for-medium-up" data-topbar>
-    <ul class="title-area">
-      <li class="name">
-        <h1>{{#link-to 'index'}}Welcome{{/link-to}}</h1>
-      </li>
-    </ul>
+	<div class = 'large-12 columns'>
+		<div class = "row header">
+				<img src = './assets/images/downtown.jpg'></img>
+		</div>
+		<div class = "row">
+			<nav class="top-bar show-for-medium-up" data-topbar>
+			<ul class="title-area">
+			  <li class="name">
+			    <h1>{{#link-to 'index'}}Welcome{{/link-to}}</h1>
+			  </li>
+			</ul>
 
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <li>{{#link-to 'index'}}Home{{/link-to}}</li>
-        <li>{{#link-to 'areas'}}Locations{{/link-to}}</li>
-        <li>{{#link-to 'events'}}Events{{/link-to}}</li>
-        <li>{{#link-to 'about'}}About Us{{/link-to}}</li>
-      </ul>
-    </section>
-  </nav>
-
-  <div class = "content">
-    {{outlet}}
-  </div>
+			<section class="top-bar-section">
+			  <!-- Right Nav Section -->
+			  <ul class="right">
+			    <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+			    <li>{{#link-to 'areas'}}Locations{{/link-to}}</li>
+			    <li>{{#link-to 'events'}}Events{{/link-to}}</li>
+			    <li>{{#link-to 'about'}}About Us{{/link-to}}</li>
+			  </ul>
+			</section>
+			</nav>
+		</div>
+		<div class = "row content">
+			{{outlet}}
+		</div>
+	</div>
 </div>

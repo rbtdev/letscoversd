@@ -9,5 +9,22 @@ html, body {
 
 .content {
 	background-color: white;
-	border: 1px solid #707070;
 }
+
+.header img {
+	padding: 0px;
+	width: 100%;
+}
+
+.row .grid {
+	margin:0px;
+	padding:20px;
+}
+
+.pricing-table .title {
+    background-color: #bbb;
+ }
+
+.pricing-table .title a {
+    color: black;
+ }

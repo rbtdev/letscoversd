@@ -1,21 +1,29 @@
-<div class = "row>
-	<form>
-		<fieldset>
-			<legend>New</legend>
-			{{input placeholder = "Name" value = controller.newArea.name}}
-			<button class = 'tiny' {{action 'addArea'}}>Add Area</button>
-		</fieldset>
-	</form>
-</div>
+{{#if isAdmin}}
 <div class = "row">
-	{{#each}}
-	<div class = "row">
-	{{#link-to 'area' this}}{{name}}{{/link-to}}
-		<ul>
-			{{#each location in locations}}
-				<li>{{#link-to 'location' location}}{{location.name}}{{/link-to}}</li>
-			{{/each}}
+	<div class = "large-12 columns"
+		<form>
+			<fieldset>
+				<legend>New</legend>
+				{{input placeholder = "Name" value = controller.newArea.name}}
+				<button class = 'tiny' {{action 'addArea'}}>Add Area</button>
+			</fieldset>
+		</form>
+	</div>
+</div>
+{{/if}}
+<div class = 'row grid'>
+	<div class = 'large-12 columns'>
+		<ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-3">
+		    {{#each}}
+		    	<li>
+		    		<ul class="pricing-table">
+		  			<li class="title">{{#link-to 'area' this}}{{name}}{{/link-to}}</li>
+			        {{#each location in locations}}
+			           <li class = "bullet-item">{{#link-to 'location' location}}{{location.name}}{{/link-to}}</li>
+			        {{/each}}
+			        </ul>
+				</li>
+		    {{/each}}
 		</ul>
 	</div>
-	{{/each}}
 </div>
