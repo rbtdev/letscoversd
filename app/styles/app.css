@@ -1,3 +1,13 @@
 html, body {
   margin: 20px;
+  background-color: #888888;
+ }
+
+.row {
+	max-width: 1000px;
+}
+
+.content {
+	background-color: white;
+	border: 1px solid #707070;
 }

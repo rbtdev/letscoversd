@@ -1,22 +1,25 @@
 
-<img src = './assets/images/downtown.jpg'></img>
-<nav class="top-bar show-for-medium-up" data-topbar>
-  <ul class="title-area">
-    <li class="name">
-      <h1>{{#link-to 'index'}}Welcome{{/link-to}}</h1>
-    </li>
-  </ul>
-
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li>{{#link-to 'index'}}Home{{/link-to}}</li>
-      <li>{{#link-to 'areas'}}Locations{{/link-to}}</li>
-      <li>{{#link-to 'events'}}Events{{/link-to}}</li>
-      <li>{{#link-to 'about'}}About Us{{/link-to}}</li>
+<div class = "row">
+  <img src = './assets/images/downtown.jpg'></img>
+  <nav class="top-bar show-for-medium-up" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1>{{#link-to 'index'}}Welcome{{/link-to}}</h1>
+      </li>
     </ul>
-  </section>
-</nav>
 
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+        <li>{{#link-to 'areas'}}Locations{{/link-to}}</li>
+        <li>{{#link-to 'events'}}Events{{/link-to}}</li>
+        <li>{{#link-to 'about'}}About Us{{/link-to}}</li>
+      </ul>
+    </section>
+  </nav>
 
-{{outlet}}
+  <div class = "content">
+    {{outlet}}
+  </div>
+</div>

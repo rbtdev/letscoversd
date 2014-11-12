@@ -1,18 +1,21 @@
-<form>
-	<fieldset>
-		<legend>New</legend>
-		{{input placeholder = "Name" value = controller.newArea.name}}
-		<button class = 'tiny' {{action 'addArea'}}>Add Area</button>
-	</fieldset>
-</form>
-<ul>
+<div class = "row>
+	<form>
+		<fieldset>
+			<legend>New</legend>
+			{{input placeholder = "Name" value = controller.newArea.name}}
+			<button class = 'tiny' {{action 'addArea'}}>Add Area</button>
+		</fieldset>
+	</form>
+</div>
+<div class = "row">
 	{{#each}}
-	<li>{{#link-to 'area' this}}{{name}}{{/link-to}}
+	<div class = "row">
+	{{#link-to 'area' this}}{{name}}{{/link-to}}
 		<ul>
 			{{#each location in locations}}
 				<li>{{#link-to 'location' location}}{{location.name}}{{/link-to}}</li>
 			{{/each}}
 		</ul>
-	</li>
+	</div>
 	{{/each}}
-</ul>
+</div>
