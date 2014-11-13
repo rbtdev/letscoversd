@@ -1,14 +1,10 @@
 html, body {
   
-  background-color: #594F68;
+  /*background-color: #50445C;*/
  }
 
-.row {
-	max-width: 1000px;
-}
-
 .content {
-	background-color: white;
+	/*background-color: white;*/
 }
 
 .header img {
@@ -19,6 +15,13 @@ html, body {
 .row .grid {
 	margin:0px;
 	padding:20px;
+}
+
+.box {
+	border: 1px solid black;
+	margin: 5px;
+	padding: 10px;
+	border-radius: 5px;
 }
 
 /*
@@ -46,11 +49,6 @@ html, body {
 
  .area .name {
 
-<<<<<<< HEAD
-.pricing-table .title a {
-    color: black;
- }
-=======
  }
 
  .area .incentive {
@@ -59,5 +57,3 @@ html, body {
  	color: red;
  }
 
-
->>>>>>> c493b9f56c8c7559f58eccab136b4666d42b6b77

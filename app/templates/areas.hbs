@@ -17,11 +17,10 @@
 </div>
 {{/if}}
 <div class = 'row grid'>
-	<div class = 'large-12 columns'>
-		<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-		    {{#each}}
-		    	<li class = "area">
-		    		<ul class="pricing-table">
+	<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
+	    {{#each}}
+	    	<li class = "area">
+	    		<ul class="pricing-table">
 		  			<li class="title">{{name}}
 		  			<hr>
 		  			</li>
@@ -37,9 +36,8 @@
 			        	{{/link-to}}
 			        	</li>
 			        {{/each}}
-			        </ul>
-				</li>
-		    {{/each}}
-		</ul>
-	</div>
+		        </ul>
+			</li>
+	    {{/each}}
+	</ul>
 </div>
