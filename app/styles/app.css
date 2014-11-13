@@ -1,6 +1,6 @@
 html, body {
-  margin: 20px;
-  background-color: #888888;
+  
+  background-color: #594F68;
  }
 
 .row {
@@ -21,10 +21,43 @@ html, body {
 	padding:20px;
 }
 
-.pricing-table .title {
-    background-color: #bbb;
- }
+/*
+	 Area Box Overides from Foundation
+*/
+.area .pricing-table {
+	border: none;
+}
 
+.area .pricing-table .bullet-item {
+	border: none;
+	padding: 5px;
+}
+.area .pricing-table .title {
+   background-color: transparent;
+   color: black;
+   padding:3px;
+ }
+.area .pricing-table .title hr {
+	margin:0;
+	margin-top:3px;
+	width: 60%;
+	margin:auto;
+}
+
+ .area .name {
+
+<<<<<<< HEAD
 .pricing-table .title a {
     color: black;
  }
+=======
+ }
+
+ .area .incentive {
+ 	font-style: italic;
+ 	font-size: smaller;
+ 	color: red;
+ }
+
+
+>>>>>>> c493b9f56c8c7559f58eccab136b4666d42b6b77
