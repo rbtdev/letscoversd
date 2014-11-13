@@ -6,22 +6,24 @@
 		</div>
 		<div class = "row">
 			<nav class="top-bar show-for-medium-up" data-topbar>
-			<ul class="title-area">
-			  <li class="name">
-			    <h1>{{#link-to 'index'}}Welcome{{/link-to}}</h1>
-			  </li>
-			</ul>
-
-			<section class="top-bar-section">
-			  <!-- Right Nav Section -->
-			  <ul class="right">
-			    <li>{{#link-to 'index'}}Home{{/link-to}}</li>
-			    <li>{{#link-to 'areas'}}Locations{{/link-to}}</li>
-			    <li>{{#link-to 'events'}}Events{{/link-to}}</li>
-			    <li>{{#link-to 'about'}}About Us{{/link-to}}</li>
-			  </ul>
-			</section>
+  			<section class="top-bar-section">
+  			  <!-- Right Nav Section -->
+  			  <ul class="left">
+  			    <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+  			    <li>{{#link-to 'areas'}}Locations{{/link-to}}</li>
+  			    <li>{{#link-to 'events'}}Events{{/link-to}}</li>
+  			    <li>{{#link-to 'about'}}About Us{{/link-to}}</li>
+  			  </ul>
+          <ul class="right">
+            <li><a href="#"><i class="fa fa-facebook fa-2x">F</i></a></li>
+            <li><a href="#"><i class="fa fa-twitter fa-2x">T</i></a></li>
+          </ul> 
+  			</section>
 			</nav>
+
+      <nav class = "show-for-small">
+        nav small
+      </nav>
 		</div>
 		<div class = "row content">
 			{{outlet}}

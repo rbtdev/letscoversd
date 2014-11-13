@@ -1,3 +1,8 @@
+<div class = 'row grid'>
+	<div class = 'large-12 columns'>
+		We have many locations around the county which are accepting blanket donations. Click on a location below to get directions, hours, and contact information.
+	</div>
+</div>
 {{#if isAdmin}}
 <div class = "row">
 	<div class = "large-12 columns"
@@ -13,13 +18,24 @@
 {{/if}}
 <div class = 'row grid'>
 	<div class = 'large-12 columns'>
-		<ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-3">
+		<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
 		    {{#each}}
-		    	<li>
+		    	<li class = "area">
 		    		<ul class="pricing-table">
-		  			<li class="title">{{#link-to 'area' this}}{{name}}{{/link-to}}</li>
+		  			<li class="title">{{name}}
+		  			<hr>
+		  			</li>
 			        {{#each location in locations}}
-			           <li class = "bullet-item">{{#link-to 'location' location}}{{location.name}}{{/link-to}}</li>
+			        	<li class = "bullet-item">
+			        	{{#link-to 'location' location}}
+			        		<div class = "name">
+			        			{{location.name}}
+			        		</div>
+			        		<div class = "incentive">
+			        			{{location.incentive}}
+			        		</div}}
+			        	{{/link-to}}
+			        	</li>
 			        {{/each}}
 			        </ul>
 				</li>
