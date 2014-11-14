@@ -42,39 +42,30 @@ html, body {
 }
 
 .location-list li {
-	list-style: none;
+	list-style-type: :none;
 }
 
-/*
-	 Area Box Overides from Foundation
-*/
-.area .pricing-table {
-	border: none;
-}
-
-.area .pricing-table .bullet-item {
-	border: none;
-	padding: 5px;
-}
-.area .pricing-table .title {
-   background-color: transparent;
-   color: black;
-   padding:3px;
- }
-.area .pricing-table .title hr {
-	margin:0;
-	margin-top:3px;
-	width: 60%;
-	margin:auto;
+.area {
+	text-align: center;
 }
 
  .area .name {
 
  }
 
+ .area li {
+ 	padding-top: 10px;
+ 	list-style-type: none;
+ 	border-bottom: 1px solid #dddddd;
+ 	padding-bottom: 10px;
+ }
+ .area li:last-of-type {
+ 	border-bottom: none;
+ }
+
  .area .incentive {
- 	font-style: italic;
+
  	font-size: smaller;
- 	color: red;
+ 	color: #00AA00;
  }
 

@@ -1,17 +1,17 @@
-<h3>{{name}}</h3>
-<div>Enter New Location</div>
-{{input placeholder = "Name" value = controller.newLocation.name}}
-{{input placeholder = "Address" value = controller.newLocation.address}}
-{{input placeholder = "Notes" value = controller.newLocation.notes}}
-{{input placeholder = "Phone" value = controller.newLocation.phone}}
-{{input placeholder = "Hours" value = controller.newLocation.hours}}
-{{input placeholder = "Website" value = controller.newLocation.website}}
-{{input placeholder = "Incentive" value = controller.newLocation.incentive}}	
-<button {{action 'addLocation'}}>Add Location</button>
-<ul>
-	{{#each locations itemController="location" }}
-		<li>{{#link-to 'location' this}}{{name}}{{/link-to}}</li>
-		<button class = 'tiny' {{action 'delete'}}>Delete</button>
-		</li>
-	{{/each}}
-</ul>
+<div class="box" style="min-height: 18em">
+		<div class="title">{{name}}</div>
+		<div class = "area">
+    {{#each location in locations}}
+    	<li>
+    	{{#link-to 'location' location}}
+    		<div class = "name">
+    			{{location.name}}
+    		</div>
+    		<div class = "incentive">
+    			{{location.incentive}}
+    		</div}}
+    	{{/link-to}}
+    	</li>
+    {{/each}}
+    </div>
+</div>

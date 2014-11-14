@@ -1,43 +1,19 @@
-<div class = 'row grid'>
-	<div class = 'large-12 columns'>
-		We have many locations around the county which are accepting blanket donations. Click on a location below to get directions, hours, and contact information.
+<div class = 'row'>
+	<div class = 'box'>
+		<div class = 'title'>
+			Locations
+		</div>
+		<div class = 'large-12 columns'>
+			We have many locations around the county which are accepting blanket donations. Click on a location below to get directions, hours, and contact information.
+		</div>
+		<div class = 'row grid'>
+			<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
+			    {{#each}}
+			    	<li>
+			    		{{render "area" this }}
+					</li>
+			    {{/each}}
+			</ul>
+		</div>
 	</div>
-</div>
-{{#if isAdmin}}
-<div class = "row">
-	<div class = "large-12 columns"
-		<form>
-			<fieldset>
-				<legend>New</legend>
-				{{input placeholder = "Name" value = controller.newArea.name}}
-				<button class = 'tiny' {{action 'addArea'}}>Add Area</button>
-			</fieldset>
-		</form>
-	</div>
-</div>
-{{/if}}
-<div class = 'row grid'>
-	<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-	    {{#each}}
-	    	<li class = "area">
-	    		<ul class="pricing-table">
-		  			<li class="title">{{name}}
-		  			<hr>
-		  			</li>
-			        {{#each location in locations}}
-			        	<li class = "bullet-item">
-			        	{{#link-to 'location' location}}
-			        		<div class = "name">
-			        			{{location.name}}
-			        		</div>
-			        		<div class = "incentive">
-			        			{{location.incentive}}
-			        		</div}}
-			        	{{/link-to}}
-			        	</li>
-			        {{/each}}
-		        </ul>
-			</li>
-	    {{/each}}
-	</ul>
 </div>
