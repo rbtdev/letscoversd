@@ -18,10 +18,11 @@ html, body {
 }
 
 .box {
-	border: 1px solid black;
+	border: 1px solid #cccccc;
 	margin: 5px;
 	padding: 10px;
 	border-radius: 5px;
+	box-shadow: -2px 5px 5px 0px #cccccc;
 }
 
 /*
