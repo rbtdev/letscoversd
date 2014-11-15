@@ -36,9 +36,18 @@ html, body {
 	text-align: center;
 	vertical-align: middle;
 	border-bottom: 1px #cccccc;
-	background-color: #eeeeee;
+	background-color: #cccccc;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+}
+
+.box .title.light-steal-blue {
+		background-color: #A2B5CD;
+
+}
+.box .title.light-steal-blue a {
+	color: #333333;
+	font-weight: :bold;
 }
 
 .location-list li {
