@@ -1,17 +1,2 @@
-<div class="box" style="min-height: 18em">
-		<div class="title">{{name}}</div>
-		<div class = "area">
-    {{#each location in locations}}
-    	<li>
-    	{{#link-to 'location' location}}
-    		<div class = "name">
-    			{{location.name}}
-    		</div>
-    		<div class = "incentive">
-    			{{location.incentive}}
-    		</div}}
-    	{{/link-to}}
-    	</li>
-    {{/each}}
-    </div>
-</div>
+
+	{{partial "partials/area-box"}}

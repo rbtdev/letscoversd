@@ -1,0 +1,17 @@
+<div class="area box" style="min-height: 18em">
+	<div class="title">{{#link-to 'area' this}}{{name}}{{/link-to}}</div>
+    <ul>
+    {{#each location in locations}}
+    	<li>
+    	{{#link-to 'location' location}}
+    		<div class = "name">
+    			{{location.name}}
+    		</div>
+    		<div class = "incentive">
+    			{{location.incentive}}
+    		</div}}
+    	{{/link-to}}
+    	</li>
+    {{/each}}
+    </ul>
+</div>
