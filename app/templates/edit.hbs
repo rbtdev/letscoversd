@@ -1,0 +1,10 @@
+<ul>
+{{#each areas}}
+	<li>{{name}}</li>
+	<ul>
+	{{#each locations}} 
+		<li {{action  "save" this}}>{{name}} </li>
+	{{/each}}
+	</ul>
+{{/each}}
+</ul>

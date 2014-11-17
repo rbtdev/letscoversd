@@ -12,6 +12,7 @@ Router.map(function() {
 	this.resource('area', { 'path' : 'areas/:id' });
 	this.route('events');
 	this.route('about');
+	this.route('edit');
 });
 
 export default Router;

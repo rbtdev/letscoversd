@@ -1,8 +1,9 @@
-<div class="area box" style="min-height: 18em">
-	<div class="title light-steal-blue">{{#link-to 'area' this}}{{name}}{{/link-to}}</div>
+
+<div class="area box radius shadow" style="min-height: 18em">
+	<div class="title chargers-blue">{{#link-to 'area' this}}{{name}}{{/link-to}}</div>
     <ul>
     {{#each location in locations}}
-        <li>
+        <li class="location">
         {{#link-to 'location' location}}
             <div class = "name">
                 {{location.name}}

@@ -1,10 +1,10 @@
 html, body {
-  
-  background-color: #EEEEEE;
+  background-color: #4A9BD2;
+  /*background-color: #EEEEEE*/;
  }
 
 .content {
-	/*background-color: white;*/
+	background-color: #FCB316;
 }
 
 .header img {
@@ -19,10 +19,8 @@ html, body {
 
 .box {
 	border: 1px solid #cccccc;
-	margin: 5px;
+	margin: 0px;
 	padding: 10px;
-	border-radius: 5px;
-	box-shadow: 0 8px 6px -6px #cccccc;
 	background-color: #fafafa;
 }
 
@@ -37,17 +35,36 @@ html, body {
 	vertical-align: middle;
 	border-bottom: 1px #cccccc;
 	background-color: #cccccc;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-radius: 0px;
+}
+
+.box.radius {
+	border-radius: 5px;
+}
+
+.box.shadow {
+	box-shadow: 0 8px 6px -6px #cccccc;
+	margin-bottom: 10px;
+}
+
+.box.raduis .title {
+	border-radius: 0px;
 }
 
 .box .title.light-steal-blue {
-		background-color: #A2B5CD;
+	 background-color: #A2B5CD;
 
 }
 .box .title.light-steal-blue a {
 	color: #333333;
 	font-weight: :bold;
+}
+
+.box .title.chargers-blue {
+	background-color: #4A9BD2;
+}
+.box .title.chargers-blue a {
+	color: #584352;
 }
 
 .location-list li {
@@ -58,23 +75,38 @@ html, body {
 	text-align: center;
 }
 
- .area .name {
-
- }
-
- .area li {
+.area ul {
+	margin-left: 0px;
+}
+.area li {
  	padding-top: 10px;
  	list-style-type: none;
  	border-bottom: 1px solid #dddddd;
  	padding-bottom: 10px;
  }
- .area li:last-of-type {
+.area li:last-of-type {
  	border-bottom: none;
  }
 
- .area .incentive {
+.location .name {}		
+.location .phone {font-size: smaller}
+.location .address {font-size: smaller}
+.location .hours {font-size: smaller}
+.location .website {font-size: smaller}
+.location .incentive {font-size: smaller; color: #00AA00;}
 
- 	font-size: smaller;
- 	color: #00AA00;
- }
+.map-canvas {
+	height: 300px;
+	width: 49%;
+	float: left;
+
+}
+.map-select {
+	float:right;
+	width:49%;
+	min-height:300px;
+}
+.map-clear {
+	clear:both;
+}
 

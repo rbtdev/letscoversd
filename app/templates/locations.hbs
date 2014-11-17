@@ -1,7 +1,1 @@
-<ul class = 'location-list'>
-{{#each}}
-	<li>
-		{{#link-to 'location' this }}{{name}}{{/link-to}}
-	</li>
-{{/each}}
-</ul>
+{{google-maps track=true locations = this.model.content}}

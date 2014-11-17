@@ -13,6 +13,8 @@ var LocationSchema = new Schema({
     notes: String,
     website: String,
     incentive: String,
+    lat: String,
+    lon: String,
     area:ObjectId
 });
 

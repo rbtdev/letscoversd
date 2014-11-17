@@ -1,0 +1,25 @@
+<div class = 'box shadow'>
+	<div class="map-canvas">
+	</div>
+	<div class="map-select box location">
+		{{#if selectedLocation}}
+			<div class = "title chargers-blue">{{selectedLocation.name}}</div>
+		    <div class = 'address'>{{selectedLocation.address}}</div>
+		    <div class = 'phone'>{{selectedLocation.phone}}</div>
+		    <div class = 'hours'>{{selectedLocation.hours}}</div>
+		    <div class = 'incentive'>{{selectedLocation.incentive}}</div>
+		    <div class = 'website'>{{selectedLocation.website}}</div>
+		    <div>
+		    {{#link-to 'location' selectedLocation}}Directions{{/link-to}}
+		    </div>
+		{{else}}
+			<div class = "title chargers-blue">Locations</div>
+			{{#each locations}}
+			    <div {{action 'selectLocation' this}}>{{name}}</div>
+			{{/each}}
+	    {{/if}}
+	    <div class = "map-directions"></div>
+	</div>
+	<div class = 'map-clear'></div>
+</div>
+

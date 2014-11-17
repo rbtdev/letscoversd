@@ -41,6 +41,8 @@ module.exports = function(app) {
         location.address = req.body.location.address,
         location.phone = req.body.location.phone,
         location.incentive = req.body.location.incentive,
+        location.lat = req.body.location.lat,
+        location.lon = req.body.location.lon,
         location.area  = req.body.location.area
 
         location.save(function (err, record) {

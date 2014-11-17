@@ -2,6 +2,15 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' *.gstatic.com *.googleapis.com",
+      'font-src': "'self' data: *.gstatic.com",
+      'connect-src': "'self'",
+      'img-src': "'self' *.googleapis.com  *.gstatic.com",
+      'style-src': "'self' 'unsafe-inline' *.googleapis.com",
+      'frame-src': "maps.googleapis.com maps.gstatic.com"
+    },
     modulePrefix: 'letscoversd',
     environment: environment,
     baseURL: '/',

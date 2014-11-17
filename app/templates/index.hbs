@@ -1,12 +1,16 @@
-<div class = 'row'>
-	<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+
+	<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
 		<li>
+			{{#if locations.length}}
 			<div class = 'box'>
 				<div class = 'title'>
 					Locations
 				</div>
-				{{render "locations" locations }}
+				We have many locations around the county accepting blanket donations.  Click on a location below to see details or {{#link-to 'areas'}}check out the complete list of locations.{{/link-to}}
+				{{google-maps locations=locations.content.content}}
+
 			</div>
+			{{/if}}
 		</li>
 		<li>
 			<div class = 'box'>
@@ -22,19 +26,4 @@
 				<p>100% of the blanket donations will be donated directly to the homeless. Through the efforts of volunteers and various charities we will be handing them out weekly until the drive is over. All areas of San Diego will benefit!</center></p>
 			</div>
 		</li>
-		<li>
-			<div class = 'box'>
-				<div class = 'title'>
-					Goal
-				</div>
-				<p style = "text-align:center; font-weight: bold">
-					Its Cold Outside Lets Take Care of our Homeless!</p>
-				<p style = "text-align:center; font-weight: bold">
-					Our Goal is 1000 Blankets before Thanksgiving</center>
-				</p>
-				<p><center>Please join us in "covering" San Diego! This is a community inspired event. Everyone involved has just one goal. Collect Blankets for our Homeless. There is no Corporate sponsor or anyone backing us. Just a group of people who want to try to make a small difference for our community. With the Help of all of our wonderful Drop Off locations anyone from anywhere in San Diego can drop off blankets.</p>
-				<p>100% of the blanket donations will be donated directly to the homeless. Through the efforts of volunteers and various charities we will be handing them out weekly until the drive is over. All areas of San Diego will benefit!</center></p>
-			</div>
-		</li>
 	</ul>
-</div>

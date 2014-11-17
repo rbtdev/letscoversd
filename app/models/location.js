@@ -7,6 +7,8 @@ var Location = DS.Model.extend({
 	notes: DS.attr('string'),
 	website: DS.attr('string'),
 	incentive: DS.attr('string'),
+	lat: DS.attr('string'),
+	lon: DS.attr('string'),
 	area: DS.belongsTo('area', {async: false})
 });
 export default Location;
