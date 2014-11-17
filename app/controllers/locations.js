@@ -8,7 +8,6 @@ export default Ember.ArrayController.extend({
 			this.set('newLocation', {});
 		},
 		save: function (location) {
-			debugger
 		}
 	},
 });

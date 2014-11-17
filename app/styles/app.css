@@ -3,6 +3,9 @@ html, body {
   /*background-color: #EEEEEE*/;
  }
 
+.row {
+	max-width: none;
+}
 .content {
 	background-color: #FCB316;
 }

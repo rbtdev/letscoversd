@@ -1,22 +1,6 @@
-
-	<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
-		<li>
-			{{#if locations.length}}
-			<div class = 'box'>
-				<div class = 'title'>
-					Locations
-				</div>
-				We have many locations around the county accepting blanket donations.  Click on a location below to see details or {{#link-to 'areas'}}check out the complete list of locations.{{/link-to}}
-				{{google-maps locations=locations.content.content}}
-
-			</div>
-			{{/if}}
-		</li>
-		<li>
-			<div class = 'box'>
-				<div class = 'title'>
-					Mission
-				</div>
+<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
+    	<li>
+    		<div class = 'box'>
 				<p style = "text-align:center; font-weight: bold">
 					Its Cold Outside Lets Take Care of our Homeless!</p>
 				<p style = "text-align:center; font-weight: bold">
@@ -26,4 +10,19 @@
 				<p>100% of the blanket donations will be donated directly to the homeless. Through the efforts of volunteers and various charities we will be handing them out weekly until the drive is over. All areas of San Diego will benefit!</center></p>
 			</div>
 		</li>
-	</ul>
+		<li>
+			{{#if locations.length}}
+			<div class = 'box'>
+				<div class = 'title'>
+					Locations
+				</div>
+				<div>
+					We have many locations around the county accepting blanket donations.  Click on a location below to see details or {{#link-to 'areas'}}check out the complete list of locations.{{/link-to}}
+				</div>
+				{{google-maps locations=locations.content.content}}
+			</div>
+			{{/if}}
+		</li>
+</ul>
+
+
